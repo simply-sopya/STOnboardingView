@@ -1,0 +1,6 @@
+framework module STOnboardingView {
+  umbrella header "STOnboardingView.h"
+  export *
+
+  module * { export * }
+}
