@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-extension STOnboardingView {
+extension STOnboardingInternal {
     
     @ViewBuilder
      func onboardingImage(for page: STOnboardingPageData) -> some View {

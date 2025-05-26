@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-extension STOnboardingView {
+extension STOnboardingInternal {
     @ViewBuilder
     internal func onboardingPage(for index: Int) -> some View {
         let page = data[index]

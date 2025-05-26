@@ -7,18 +7,18 @@
 
 import SwiftUI
 
-public struct STOnboardingView: View {
+ struct STOnboardingInternal: View {
     internal let data: [STOnboardingPageData]
     internal let style: STOnboardingStyle
     @StateObject private var viewModel: STOnboardingViewModel
     
-    public init(data: [STOnboardingPageData], style: STOnboardingStyle = STOnboardingStyle(), onFinish: @escaping () -> Void) {
+     init(data: [STOnboardingPageData], style: STOnboardingStyle = STOnboardingStyle(), onFinish: @escaping () -> Void) {
         self.data = data
         self.style = style
         _viewModel = StateObject(wrappedValue: STOnboardingViewModel(pageCount: data.count, onFinish: onFinish))
     }
     
-    public var body: some View {
+     var body: some View {
         VStack {
             TabView(selection: $viewModel.currentPage) {
                 ForEach(data.indices, id: \.self) { index in

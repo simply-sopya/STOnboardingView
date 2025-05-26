@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-extension STOnboardingView {
+extension STOnboardingInternal {
     internal func onboardingTitle(_ title: String?) -> some View {
         Text(title ?? "")
             .font(style.titleFont)

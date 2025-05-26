@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-extension STOnboardingView {
+extension STOnboardingInternal {
     @ViewBuilder
      func fallbackLocalImage(page: STOnboardingPageData, width: CGFloat, height: CGFloat, cornerRadius: CGFloat) -> some View {
         if let placeholder = page.placeholderImageName,

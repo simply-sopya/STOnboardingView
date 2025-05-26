@@ -7,24 +7,24 @@
 
 import SwiftUI
 
-public class STOnboardingViewModel: ObservableObject {
+ class STOnboardingViewModel: ObservableObject {
     @Published public var currentPage: Int = 0
     @AppStorage("hasCompletedOnboarding") public var hasCompleted: Bool = false
 
-    public let pageCount: Int
-    private let onFinish: () -> Void
+     let pageCount: Int
+     let onFinish: () -> Void
 
-    public init(pageCount: Int, onFinish: @escaping () -> Void) {
+     init(pageCount: Int, onFinish: @escaping () -> Void) {
         self.pageCount = pageCount
         self.onFinish = onFinish
     }
 
-    public func skip() {
+     func skip() {
         hasCompleted = true
         onFinish()
     }
 
-    public func next() {
+     func next() {
         if currentPage < pageCount - 1 {
             currentPage += 1
         } else {
@@ -32,12 +32,12 @@ public class STOnboardingViewModel: ObservableObject {
         }
     }
 
-    public func finish() {
+     func finish() {
         hasCompleted = true
         onFinish()
     }
 
-    public var isLastPage: Bool {
+     var isLastPage: Bool {
         currentPage == pageCount - 1
     }
 }
